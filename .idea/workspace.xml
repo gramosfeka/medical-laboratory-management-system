@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44c5b495-e7d8-4112-a07e-b7c2bb7e3eb6" name="Default Changelist" comment="" />
+    <list default="true" id="44c5b495-e7d8-4112-a07e-b7c2bb7e3eb6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AppointmentRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AppointmentRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_08_141813_create_appointments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_08_141813_create_appointments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointments/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointments/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointments/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/left-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/left-sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +42,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -147,11 +165,13 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1oCFYqWBhUnL8OTRnjAg57jQf0O" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -170,11 +190,19 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.edit.blade.php">
+    <configuration name="edit.blade.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/medical-laboratory-management-system/resources/views/appointments/edit.blade.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.edit.blade.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -214,7 +242,21 @@
       <workItem from="1614944528115" duration="10000" />
       <workItem from="1614944539921" duration="2000" />
       <workItem from="1614952163912" duration="11000" />
+      <workItem from="1616271062018" duration="443000" />
+      <workItem from="1616276509620" duration="634000" />
+      <workItem from="1616279332143" duration="122000" />
+      <workItem from="1616323944015" duration="7989000" />
+      <workItem from="1616337059616" duration="4029000" />
+      <workItem from="1616355429805" duration="5038000" />
     </task>
+    <task id="LOCAL-00001" summary="First Commit">
+      <created>1616271498471</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616271498471</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,5 +267,22 @@
         <option value="$PROJECT_DIR$/node_modules/concat/index.js" />
       </list>
     </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
   </component>
 </project>

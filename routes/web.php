@@ -63,6 +63,7 @@ Route::get('/{appointment}/edit', [AppointmentController::class, 'edit'])->name(
 Route::put('/{appointment}/update', [AppointmentController::class, 'update'])->name('appointments.update');
 Route::delete('/{appointment}/destroy', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
 Route::get('/getFreeEvents', [AppointmentController::class, 'getFreeEvents'])->name('appointments.getFreeEvents');
+Route::get('/download/{id}', [AppointmentController::class, 'download'])->name('appointments.download');
 
 });
 

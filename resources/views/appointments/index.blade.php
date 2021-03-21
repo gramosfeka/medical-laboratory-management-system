@@ -3,13 +3,13 @@
 @section('title', 'All Appointments')
 
 @section('content')
-
+    @if(($base_isAdmin|| $base_isUser))
     <div class="row">
         <div class="col-sm-12 mb-4">
                 <a href="{{ route('appointments.create') }}" class="btn btn-primary  font-weight-bold">Create New Appointment</a>
         </div>
     </div>
-
+    @endif
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -30,10 +30,10 @@
             </div>
         </div>
     </div>
-   
 
 
- 
+
+
 
 
 @stop
@@ -55,7 +55,7 @@
                     {data: 'name', name: 'name'},
                     {data: 'surname', name: 'surname'},
                     {data: 'phone_number', name: 'phone_number'},
-                    {data: 'status', name: 'status'},                   
+                    {data: 'status', name: 'status'},
                     {data: 'actions', name: 'actions'},
                 ],
             });

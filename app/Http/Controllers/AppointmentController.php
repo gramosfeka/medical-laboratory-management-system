@@ -22,9 +22,9 @@ class AppointmentController extends Controller
     public function getFreeEvents(Request $request){
 
         $times = Time::get(['time'])->toArray();
-       
-        $appointments = Appointment::where('date', $request->date)->get()->toArray();      
-        
+
+        $appointments = Appointment::where('date', $request->date)->get()->toArray();
+
         $busy = [];
         foreach($appointments as $appointment){
             $busy [] = $appointment['time'];
@@ -39,8 +39,8 @@ class AppointmentController extends Controller
             if(in_array($value, $busy)){
                 unset($events[$key]);
             }
-        }   
-        
+        }
+
         return response()->json($events);
 
     }
@@ -48,8 +48,10 @@ class AppointmentController extends Controller
     public function create(){
         $times = Time::get(['time'])->toArray();
         $tests = Test::all();
-   
-        $appointments = Appointment::all()->toArray();      
+        $users = User::where('role','user')->get(['name', 'id']);
+
+
+        $appointments = Appointment::all()->toArray();
 
         $busy = [];
         foreach($appointments as $appointment){
@@ -65,17 +67,19 @@ class AppointmentController extends Controller
             if(in_array($value, $busy)){
                 unset($events[$key]);
             }
-        }   
+        }
 
-        return view('appointments.create', compact('events', 'tests'));
+        return view('appointments.create', compact('events', 'tests','users'));
     }
 
     public function datatable()
     {
         if (auth()->user()->is_admin){
              $appointments = Appointment::get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
-        }else{
+        }elseif(auth()->user()->is_user){
             $appointments = Appointment::where('user_id', auth()->user()->id)->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }else {
+            $appointments = Appointment::where('employee_id', auth()->user()->id)->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
         }
 
         return Datatables::of($appointments)
@@ -104,21 +108,37 @@ class AppointmentController extends Controller
 
 
     public function store(AppointmentRequest $request){
-    //   $appointments =  Appointment::create($request->all())->tests()->attach($request->input('test', []));
-        Appointment::create([
-            'name' => $request->name,
-            'surname' => $request->surname,
-            'date_of_birth' => $request->date_of_birth,
-            'phone_number' => $request->phone_number,
-            'email' => $request->email,
-            'status' => $request->status,
-            'date' =>  $request->date,
-            'time' => $request->time,
-            'user_id' => auth()->user()->id
 
-        ])->tests()->attach($request->input('test', []));       
-   
-        
+        if (auth()->user()->is_admin){
+            Appointment::create([
+                'name' => $request->name,
+                'surname' => $request->surname,
+                'date_of_birth' => $request->date_of_birth,
+                'phone_number' => $request->phone_number,
+                'email' => $request->email,
+                'date' =>  $request->date,
+                'time' => $request->time,
+                'user_id' => $request->user_id,
+
+            ])->tests()->attach($request->input('test', []));
+        }else{
+            Appointment::create([
+                'name' => $request->name,
+                'surname' => $request->surname,
+                'date_of_birth' => $request->date_of_birth,
+                'phone_number' => $request->phone_number,
+                'email' => $request->email,
+                'date' =>  $request->date,
+                'time' => $request->time,
+                'user_id' => auth()->user()->id,
+
+
+
+            ])->tests()->attach($request->input('test', []));
+        }
+
+
+
         Toastr::success('Appointment add successfuly', 'success');
         return redirect()->route('appointments.index');
     }
@@ -126,32 +146,39 @@ class AppointmentController extends Controller
     public function edit($id){
 
         $appointment = Appointment::find($id);
-        $user = User::all();
-        // dd($user);
-        if($appointment->status == 'none'){
-            return view('appointments.edit',compact('appointment','user'));
-        }elseif($appointment->status == 'approved'){
-            return view('appointments.edit',compact('appointment','user'));
-        }elseif($appointment->status == 'on_the_way'){
-            return view('appointments.edit',compact('appointment','user'));
-        }elseif($appointment->status == 'sample_collected'){
-            return view('appointments.edit',compact('appointment','user'));
-        }elseif($appointment->status == 'result_send'){
-            return view('appointments.edit',compact('appointment','user'));
-        }
+        $users = User::where('role','employee')->get(['name', 'id']);
 
-        
-        
+        return view('appointments.edit',compact('appointment','users'));
     }
 
-    public function update(AppointmentRequest $request, $id){
-        $appointment = Appointment::find($id);
-        $appointment->update([
-         'status' => $request->status
-        ]);
+    public function update(Request $request, $id){
 
+        if (auth()->user()->is_admin) {
+            $request->validate([
+                'status' => ['required']
+            ]);
+        }
+        $appointment = Appointment::find($id);
+        if (auth()->user()->is_admin) {
+            $appointment->update([
+                'status' => $request->status,
+                'employee_id' => $request->employee_id,
+
+            ]);
+        }else{
+            $appointment->update([
+                'status' => $request->status,
+                $filename = time().'.'.request()->file('file')->getClientOriginalExtension(),
+                request()->file->move(public_path('uploads'), $filename),
+                'file' => $filename,
+            ]);
+        }
         Toastr::success('Appointment updated successfully','Success');
         return redirect()->route('appointments.index');
+    }
+
+    public function download($file){
+        return response()->download('uploads/'. $file);
     }
 
     public function destroy($id){

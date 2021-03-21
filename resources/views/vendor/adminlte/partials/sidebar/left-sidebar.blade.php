@@ -24,7 +24,7 @@
                   <i class="nav-icon fas fa-fw fa-user"></i>&nbsp;<p class="text">Users</p>
                 </a>
             </li>
-            
+
             <li class="nav-item">
                 <a href="{{ route('tests.index') }}" class="nav-link">
                   <i class="nav-icon fas fa-file-medical"></i>&nbsp;<p class="text">Tests</p>
@@ -34,14 +34,14 @@
             @endif
 
 
-            @if(($base_isAdmin || $base_isUser))
+
             <li class="nav-item">
                 <a href="{{ route('appointments.index') }}" class="nav-link">
                   <i class="nav-icon far fa-calendar-check"></i>&nbsp;<p class="text">Appointments</p>
                 </a>
             </li>
-            @endif
-            
+
+
             <li class="nav-item">
                 <a href="{{ route('tests.show') }}" class="nav-link">
                   <i class="nav-icon far fa-list-alt"></i>&nbsp;<p class="text">Test Details</p>

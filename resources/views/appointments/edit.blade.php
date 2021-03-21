@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Add new Appointment')
+@section('title', 'Appointment' )
 
 @section('content_header')
     <div class="container">
@@ -13,13 +13,13 @@
                 </ul>
             </div>
         @endif
-  
+
     </div>
 
     <div class="row">
         <div class="col-12">
             <div class="card">
-           
+
             <p class="text-center py-4"><strong>Appointment for {{ $appointment->name." ". $appointment->surname}} </strong></p>
                 <div class="card-body table-responsive">
 
@@ -53,12 +53,17 @@
                       <th colspan="2" class= "text-right">Status</th>
                       <td colspan="2" class ="text-left">{{$appointment->status}}</td>
                     </tr>
-                    
+                    @if(($appointment->file != null))
+                        <tr>
+                            <th colspan="2" class= "text-right">Result</th>
+                            <td colspan="2" class ="text-left"><a href="{{ route('appointments.download', ['id' => $appointment->file]) }}" class="btn btn-primary p-2">Download</a></td>
+                        </tr>
+                     @endif
                     </tbody>
                   </table>
 
                 <div class="col-12 text-center">
-                   
+
                          <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary mt-4 " data-toggle="modal" data-target="#exampleModal">
                         Take Action
@@ -75,36 +80,41 @@
                                         <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form action="{{ route('appointments.update', ['appointment' => $appointment->id]) }}" method="POST" >
+                                    <form action="{{ route('appointments.update', ['appointment' => $appointment->id]) }}" method="POST" enctype="multipart/form-data">
                                         @method('PUT')
                                         @csrf
-                                        <div class="modal-body">    
-                                            <label class="form-inline col-md-2 col-form-label" for="status" style="display: block;">Status:</label>
-                                            <select name="status" class="form-control col-sm-10">
-                                                <option value="approved">Approved</option>
-                                                <option value="on_the_way">On the Way</option>
-                                                <option value="sample_collected" >Sample Collected</option>
-                                                <option value="result_send" >Result send</option>
-                                            </select>
+                                        <div class="modal-body">
+                                            @if(($base_isAdmin  && $appointment->status == 'none'))
+                                                <label class="form-inline col-md-2 col-form-label" for="status" style="display: block;">Status:</label>
+                                                <select name="status" class="form-control col-sm-10">
+                                                    <option value="approved">Approved</option>
+                                                </select>
+                                                <label class="form-inline col-md-3 col-form-label" for="employee_id" style="display: block;">Assign to:</label>
+                                                <select name="employee_id" id="employee_id" class="form-control col-sm-10">
+                                                    @foreach($users as $employee)
+                                                        <option value="{{$employee->id}}">{{ $employee->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            @endif
 
-<!--                                             
-                                            <label class="form-inline col-md-3 col-form-label" for="status" style="display: block;">Employee:</label>
-                                             <select name="user_id" id="user_id" class="form-control col-sm-10">
-                                                @foreach($user as $key => $value)
-                                                    <option value="">@if($value['role'] == 'employee') {{ $value['name'] }}@endif</option>
-                                                @endforeach
-                                            </select -->
+                                            @if(($base_isEmployee))
+                                                <label class="form-inline col-md-2 col-form-label" for="status" style="display: block;">Status:</label>
+                                                <select name="status" class="form-control col-sm-10">
+                                                    <option value="on_the_way">On the Way</option>
+                                                    <option value="sample_collected" >Sample Collected</option>
+                                                    <option value="result_send" >Result send</option>
+                                                </select>
+                                            @endif
 
 
-                                            @if($appointment->status == "sample_collected")
-                                            <label class="form-inline col-md-2 col-form-label" for="file" style="display: block;">Results:</label>
-                                            <input type="file" name="file" id="file" value="{{ old('file') }}" class="">
+                                            @if($base_isEmployee && $appointment->status == "sample_collected")
+                                                <label class="form-inline col-md-2 col-form-label" for="file" style="display: block;">Results:</label>
+                                                <input type="file" name="file" id="file" value="{{ old('file') }}" class="">
                                             @endif
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                             <button type="submit" class="btn btn-primary">Save changes</button>
-                                            
                                         </div>
                                     </form>
                                 </div>

@@ -23,17 +23,17 @@ class AppointmentRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {   
+    {
         $todayDate = Carbon::today()->format('d-m-Y');
-        $now =Carbon::now()->format('H:i');
+//        $now =Carbon::now()->format('H:i');
         return [
-            // 'name' => ['required', 'string', 'max:255'],
-            // 'surname' => ['required', 'string', 'max:255'],
-            // 'date_of_birth' => ['required', 'date','before:today'],
-            // 'phone_number' => 'required',
-            // 'email' => ['required', 'string', 'email', 'max:255'],
-            // 'date' => ['required', 'date','after_or_equal:'.$todayDate],
-            // 'time'=>['required', 'string',  'after:'.$now],
+             'name' => ['required', 'string', 'max:255'],
+             'surname' => ['required', 'string', 'max:255'],
+             'date_of_birth' => ['required', 'date','before:today'],
+             'phone_number' => 'required',
+             'email' => ['required', 'string', 'email', 'max:255'],
+             'date' => ['required', 'date','after:'.$todayDate],
+             'time'=>['required', 'string'],
         ];
     }
 }

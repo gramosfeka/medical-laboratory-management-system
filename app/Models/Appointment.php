@@ -20,7 +20,9 @@ class Appointment extends Model
         'date',
         'time',
         'status',
-        'user_id'
+        'user_id',
+        'employee_id',
+        'file'
     ];
 
     protected $cast = [

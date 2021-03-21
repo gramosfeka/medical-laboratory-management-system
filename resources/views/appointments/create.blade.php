@@ -38,7 +38,7 @@
                                     <input type="text" name="surname" id="surname" value="{{ old('surname') }}" placeholder="" class="form-control ">
                                 </div>
                             </div>
-                        
+
                             <div class="form-group row" style="text-align: right;">
                                 <label class="form-inline col-md-2 col-form-label text-right" for="date_of_birth" style="display: block;">Date of birth:</label>
                                 <div class="col-sm-10">
@@ -72,7 +72,19 @@
                                     @endforeach
                                  </select>
                             </div>
-                            
+
+                            @if(($base_isAdmin))
+                            <div class="form-group row" style="text-align: right;">
+                                <label class="form-inline col-md-2 col-form-label " for="user_id" style="display: block;"> User:</label>
+                                <div class="col-sm-10">
+                                    <select name="user_id" id= "user_id" class="form-control ">
+                                        @foreach($users as $user)
+                                            <option value="{{  $user->id }}">{{ $user->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            @endif
                             <p style="color:red; position: relative; top:10px;"> <Strong>Please Select Tests in the table below:</Strong></p>
                             <div class=" table-responsive">
                             <table class="table table-bordered my-4" id="testsdTable">
@@ -94,7 +106,7 @@
                                         <input type="checkbox" name="test[]" value="{{$test->id}}">
                                         </td>
                                     </tr>
-                                @endforeach                                       
+                                @endforeach
                                 </tbody>
                             </table>
                             </div>
@@ -134,6 +146,6 @@
 
 
 
-      
+
     </script>
 @endpush
