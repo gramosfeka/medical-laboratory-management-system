@@ -12,7 +12,7 @@
         <nav class="mt-4">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
             <li class="nav-item">
-                <a class="nav-link mb-4" href="">
+                <a href="{{route('profile')}} "class="nav-link mb-4" href="">
                     <i class="nav-icon fa fa-user"></i>&nbsp;<p class="text">Profile</p>
                 </a>
                 <hr>

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 
+
 class UserController extends Controller
 {
     public function index(){
@@ -51,7 +52,7 @@ class UserController extends Controller
 
 
     public function create(){
-         return view('users.create');
+        return view('users.create');
     }
 
     public function store(UserRequest $request){
@@ -64,9 +65,11 @@ class UserController extends Controller
            'role' => $request->role
            ]);
 
-           $user->update([ 
-            'password' => str::random(10),
+           $user->update([
+            'password' => Hash::make($user->name.".".$user->surname),
             ]);
+
+
         Toastr::success('User added successfully','Success');
         return redirect()->route('users.index', compact('user'));
     }

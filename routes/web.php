@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,15 @@ Route::get('/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::put('/{user}/update', [UserController::class, 'update'])->name('users.update');
 Route::delete('/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy');
 });
+
+Route::prefix('profile')->group(function () {
+    Route::get('/', [ProfileController::class, 'edit'])->name('profile');
+    Route::put('/update', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('/update/password', [ProfileController::class, 'update'])->name('profile.updatePassword');
+
+});
+
+
 
 Route::prefix('tests')->group(function () {
 Route::get('/index', [TestController::class, 'index'])->name('tests.index')->middleware('is_admin');

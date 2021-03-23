@@ -109,7 +109,7 @@ class AppointmentController extends Controller
 
     public function store(AppointmentRequest $request){
 
-        if (auth()->user()->is_admin){
+
             Appointment::create([
                 'name' => $request->name,
                 'surname' => $request->surname,
@@ -118,24 +118,10 @@ class AppointmentController extends Controller
                 'email' => $request->email,
                 'date' =>  $request->date,
                 'time' => $request->time,
-                'user_id' => $request->user_id,
+                'user_id' => auth()->user()->is_admin ? $request->user_id : auth()->user()->id,
 
             ])->tests()->attach($request->input('test', []));
-        }else{
-            Appointment::create([
-                'name' => $request->name,
-                'surname' => $request->surname,
-                'date_of_birth' => $request->date_of_birth,
-                'phone_number' => $request->phone_number,
-                'email' => $request->email,
-                'date' =>  $request->date,
-                'time' => $request->time,
-                'user_id' => auth()->user()->id,
 
-
-
-            ])->tests()->attach($request->input('test', []));
-        }
 
 
 
