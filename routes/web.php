@@ -38,10 +38,11 @@ Route::put('/{user}/update', [UserController::class, 'update'])->name('users.upd
 Route::delete('/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy');
 });
 
+
 Route::prefix('profile')->group(function () {
     Route::get('/', [ProfileController::class, 'edit'])->name('profile');
     Route::put('/update', [ProfileController::class, 'update'])->name('profile.update');
-    Route::put('/update/password', [ProfileController::class, 'update'])->name('profile.updatePassword');
+    Route::put('/updatePassword', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
 
 });
 
