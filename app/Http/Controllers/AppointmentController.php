@@ -108,8 +108,6 @@ class AppointmentController extends Controller
 
 
     public function store(AppointmentRequest $request){
-
-
             Appointment::create([
                 'name' => $request->name,
                 'surname' => $request->surname,
@@ -119,11 +117,7 @@ class AppointmentController extends Controller
                 'date' =>  $request->date,
                 'time' => $request->time,
                 'user_id' => auth()->user()->is_admin ? $request->user_id : auth()->user()->id,
-
             ])->tests()->attach($request->input('test', []));
-
-
-
 
         Toastr::success('Appointment add successfuly', 'success');
         return redirect()->route('appointments.index');
@@ -138,27 +132,23 @@ class AppointmentController extends Controller
     }
 
     public function update(Request $request, $id){
+        if ($request->file('file') != null) {
 
+            $filename = time() . '.' . request()->file('file')->getClientOriginalExtension();
+            request()->file->move(public_path('uploads'), $filename);
+    }
         if (auth()->user()->is_admin) {
             $request->validate([
                 'status' => ['required']
             ]);
         }
         $appointment = Appointment::find($id);
-        if (auth()->user()->is_admin) {
             $appointment->update([
                 'status' => $request->status,
-                'employee_id' => $request->employee_id,
+                'employee_id' => auth()->user()->is_admin ? $request->employee_id: auth()->user()->id ,
+                'file' => auth()->user()->is_admin ? "" : ( $request->file('file')?  $filename: ""),
+            ]);
 
-            ]);
-        }else{
-            $appointment->update([
-                'status' => $request->status,
-                $filename = time().'.'.request()->file('file')->getClientOriginalExtension(),
-                request()->file->move(public_path('uploads'), $filename),
-                'file' => $filename,
-            ]);
-        }
         Toastr::success('Appointment updated successfully','Success');
         return redirect()->route('appointments.index');
     }

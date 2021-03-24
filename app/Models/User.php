@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'id',
         'name',
         'surname',
         'phone_number',
@@ -52,7 +53,7 @@ class User extends Authenticatable
         return $this->role =='admin';
 
     }
-    
+
     public function getIsEmployeeAttribute() {
         return $this->role =='employee';
 
@@ -66,5 +67,6 @@ class User extends Authenticatable
     public function appointments(){
         return $this->hasMany(Appointment::class);
      }
-    
+
+
 }

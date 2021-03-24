@@ -34,7 +34,7 @@ class AppointmentRequest extends FormRequest
              'email' => ['required', 'string', 'email', 'max:255'],
              'date' => ['required', 'date','after:'.$todayDate],
              'time'=>['required', 'string'],
-            'user_id' =>['sometimes', 'exists:users'],
+            'user_id' =>['sometimes','required'],
         ];
     }
 }

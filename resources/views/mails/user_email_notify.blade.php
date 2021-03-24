@@ -162,7 +162,7 @@
 
                                         <p style="font-family: sans-serif; text-align:center; font-size: 14px; font-weight: normal; Margin: 0; Margin-bottom: 15px;">Hi {{$user->name}}, Your account has been registered by Medical Laboratory, now you can login by clicking the bottom below<br>
                                            email: {{$user->email}}<br>
-                                            password: {{$user->name.$user->surname}}<br></p>
+                                            password: {{$user->name.".".$user->surname}}<br></p>
                                         <table border="0" cellpadding="0" cellspacing="0" class="hr" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" width="100%">
                                             <tbody>
                                             <tr>
