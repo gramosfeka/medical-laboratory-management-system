@@ -23,6 +23,6 @@ class IsEmployee
             }
         }
 
-        return abort(404);
+        return redirect('/');
     }
 }

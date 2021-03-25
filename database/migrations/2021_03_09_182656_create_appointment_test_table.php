@@ -16,11 +16,11 @@ class CreateAppointmentTestTable extends Migration
         Schema::create('appointment_test', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('appointment_id')->unsigned();
-            $table->foreign('appointment_id')->references('id')->on('appointments');
+            $table->foreign('appointment_id')->references('id')->on('appointments')->onDelete('cascade');
             $table->bigInteger('test_id')->unsigned();
-            $table->foreign('test_id')->references('id')->on('tests');
+            $table->foreign('test_id')->references('id')->on('tests')->onDelete('cascade');
 
-            
+
         });
     }
 

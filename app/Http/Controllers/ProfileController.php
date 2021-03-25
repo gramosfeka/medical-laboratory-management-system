@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Exceptions\GeneralException;
 use App\Http\Requests\UpdateUserPasswordRequest;
 use App\Http\Requests\UpdateUserProfileRequest;
@@ -34,7 +35,6 @@ class ProfileController extends Controller
 
     public function updateProfile(User $user, array $data)
     {
-
         return DB::transaction(function () use ($user, $data) {
             if ($user->update([
                 'name' => $data['name'],
@@ -45,16 +45,15 @@ class ProfileController extends Controller
             ])) {
                 return $user;
             }
-
             throw new GeneralException('error');
+
         });
     }
 
     public function updatePassword(UpdateUserPasswordRequest $request){
         $user = auth()->user();
-
         try {
-            $this->checkPassword($user, $request->only('password'));
+        $this->checkPassword($user, $request->only('password'));
         } catch (GeneralException $e) {
         }
 
@@ -65,8 +64,8 @@ class ProfileController extends Controller
     public function checkPassword(User $user, array $data)
     {
         if ($user->update(['password' => Hash::make($data['password'])])) {
-
             return $user;
         }
+        throw new GeneralException('error');
     }
 }

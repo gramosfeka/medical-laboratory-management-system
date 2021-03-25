@@ -3,9 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="44c5b495-e7d8-4112-a07e-b7c2bb7e3eb6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/GeneralException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/IsAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/IsAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/IsEmployee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/IsEmployee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_08_141813_create_appointments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_08_141813_create_appointments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_09_182656_create_appointment_test_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_09_182656_create_appointment_test_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointments/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointments/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mails/user_email_notify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mails/user_email_notify.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tests/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tests/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tests/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tests/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -265,7 +282,13 @@
       <workItem from="1616582238036" duration="1294000" />
       <workItem from="1616592248550" duration="7776000" />
       <workItem from="1616602139894" duration="8355000" />
-      <workItem from="1616611082743" duration="1442000" />
+      <workItem from="1616611082743" duration="1486000" />
+      <workItem from="1616669308940" duration="1517000" />
+      <workItem from="1616670856109" duration="527000" />
+      <workItem from="1616671416775" duration="542000" />
+      <workItem from="1616672042310" duration="7576000" />
+      <workItem from="1616682442800" duration="5518000" />
+      <workItem from="1616688128414" duration="4098000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1616271498471</created>
@@ -302,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616595801989</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixes">
+      <created>1616612553992</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1616612553992</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

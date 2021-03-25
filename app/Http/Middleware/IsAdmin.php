@@ -23,6 +23,6 @@ class IsAdmin
             }
         }
 
-        return abort(404);
+        return redirect('/');
     }
 }

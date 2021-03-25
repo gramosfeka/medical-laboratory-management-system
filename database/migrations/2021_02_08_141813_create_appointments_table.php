@@ -20,7 +20,7 @@ class CreateAppointmentsTable extends Migration
             $table->date('date_of_birth');
             $table->integer('phone_number');
             $table->string('email');
-            $table->string('status')->default('none');
+            $table->enum('status', ['pending', 'approved','waiting', 'sample_collected','result_send'])->default('pending');
             $table->date('date');
             $table->string('time');
             $table->string('file')->nullable();

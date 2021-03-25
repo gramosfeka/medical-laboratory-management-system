@@ -28,7 +28,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::redirect('/', '/login')->name('index');
 
-Route::prefix('users')->middleware('is_admin')->group(function () {
+Route::prefix('users')->middleware(['auth','is_admin'])->group(function () {
 Route::get('/index', [UserController::class, 'index'])->name('users.index');
 Route::get('/datatable', [UserController::class, 'datatable'])->name('users.datatable');
 Route::get('/create', [UserController::class, 'create'])->name('users.create');
@@ -39,7 +39,7 @@ Route::delete('/{user}/destroy', [UserController::class, 'destroy'])->name('user
 });
 
 
-Route::prefix('profile')->group(function () {
+Route::prefix('profile')->middleware('auth')->group(function () {
     Route::get('/', [ProfileController::class, 'edit'])->name('profile');
     Route::put('/update', [ProfileController::class, 'update'])->name('profile.update');
     Route::put('/updatePassword', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
@@ -48,7 +48,7 @@ Route::prefix('profile')->group(function () {
 
 
 
-Route::prefix('tests')->group(function () {
+Route::prefix('tests')->middleware('auth')->group(function () {
 Route::get('/index', [TestController::class, 'index'])->name('tests.index')->middleware('is_admin');
 Route::get('/create', [TestController::class, 'create'])->name('tests.create');
 Route::get('/testsdatatable', [TestController::class, 'testsdatatable'])->name('tests.testsdatatable');
@@ -64,7 +64,7 @@ Route::delete('/{test}/destroy', [TestController::class, 'destroy'])->name('test
 
 
 
-Route::prefix('appointments')->group(function () {
+Route::prefix('appointments')->middleware('auth')->group(function () {
 Route::get('/index', [AppointmentController::class, 'index'])->name('appointments.index');
 Route::get('/create', [AppointmentController::class, 'create'])->name('appointments.create');
 Route::get('/datatable', [AppointmentController::class, 'datatable'])->name('appointments.datatable');

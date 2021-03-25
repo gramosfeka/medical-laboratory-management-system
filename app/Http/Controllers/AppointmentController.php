@@ -8,6 +8,7 @@ use App\Models\Test;
 use App\Models\User;
 use App\Models\Time;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Gate;
 use Yajra\DataTables\DataTables;
 use Carbon\Carbon;
 use App\Http\Requests\AppointmentRequest;
@@ -16,6 +17,7 @@ class AppointmentController extends Controller
 {
     public function index(){
         $tests = Test::all();
+
         return view('appointments.index', ['tests' => $tests]);
     }
 
@@ -49,6 +51,8 @@ class AppointmentController extends Controller
         $times = Time::get(['time'])->toArray();
         $tests = Test::all();
         $users = User::where('role','user')->get(['name', 'id']);
+
+        Gate::authorize('create-appointments');
 
 
         $appointments = Appointment::all()->toArray();
@@ -108,6 +112,7 @@ class AppointmentController extends Controller
 
 
     public function store(AppointmentRequest $request){
+            Gate::authorize('create-appointments');
             Appointment::create([
                 'name' => $request->name,
                 'surname' => $request->surname,
@@ -126,6 +131,7 @@ class AppointmentController extends Controller
     public function edit($id){
 
         $appointment = Appointment::find($id);
+        Gate::authorize('edit-appointments',$appointment);
         $users = User::where('role','employee')->get(['name', 'id']);
 
         return view('appointments.edit',compact('appointment','users'));
@@ -136,7 +142,7 @@ class AppointmentController extends Controller
 
             $filename = time() . '.' . request()->file('file')->getClientOriginalExtension();
             request()->file->move(public_path('uploads'), $filename);
-    }
+        }
         if (auth()->user()->is_admin) {
             $request->validate([
                 'status' => ['required']
@@ -148,6 +154,8 @@ class AppointmentController extends Controller
                 'employee_id' => auth()->user()->is_admin ? $request->employee_id: auth()->user()->id ,
                 'file' => auth()->user()->is_admin ? "" : ( $request->file('file')?  $filename: ""),
             ]);
+
+        Gate::authorize('edit-appointments',$appointment);
 
         Toastr::success('Appointment updated successfully','Success');
         return redirect()->route('appointments.index');
