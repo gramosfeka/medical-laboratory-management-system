@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserRegistered;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Brian2694\Toastr\Facades\Toastr;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\Hash;
@@ -71,7 +71,7 @@ class UserController extends Controller
             'password' => Hash::make($user->name.".".$user->surname),
             ]);
 
-        event(new Registered($user));
+        event(new UserRegistered($user));
 
         Toastr::success('User added successfully','Success');
         return redirect()->route('users.index', compact('user'));

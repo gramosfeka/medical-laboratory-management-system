@@ -1,4 +1,4 @@
-@inject('layoutHelper', \JeroenNoten\LaravelAdminLte\Helpers\LayoutHelper)
+@inject('layoutHelper', 'JeroenNoten\LaravelAdminLte\Helpers\LayoutHelper')
 
 @php( $dashboard_url = View::getSection('dashboard_url') ?? config('adminlte.dashboard_url', 'home') )
 
@@ -9,10 +9,10 @@
 @endif
 
 <a href="{{ $dashboard_url }}"
-    @if($layoutHelper->isLayoutTopnavEnabled())
-        class="navbar-brand {{ config('adminlte.classes_brand') }}"
-    @else
-        class="brand-link {{ config('adminlte.classes_brand') }}"
+   @if($layoutHelper->isLayoutTopnavEnabled())
+   class="navbar-brand {{ config('adminlte.classes_brand') }}"
+   @else
+   class="brand-link {{ config('adminlte.classes_brand') }}"
     @endif>
 
     {{-- Small brand logo --}}
