@@ -11,7 +11,6 @@
 
 @section('content')
     <div class="container">
-
         <div class="col">
             <div class="card">
                 <div class="card-body">
@@ -62,8 +61,9 @@
                                     @enderror
                                 </div>
                             </div>
-
-                           <button class="btn-btn-sm btn-primary mt-2">Save</button>
+                            <div class="col-sm-10 offset-sm-2">
+                                <button class="btn-btn-sm btn-primary mt-2">Save</button>
+                            </div>
                         </div>
                     </form>
                 </div>

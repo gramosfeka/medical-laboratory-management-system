@@ -23,11 +23,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
-//Auth::routes(['verify'=>true]);
+Auth::routes(['verify'=>true]);
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
+
 
 Route::redirect('/', '/login')->name('index');
 
@@ -71,6 +71,16 @@ Route::prefix('appointments')->middleware('auth')->group(function () {
 Route::get('/index', [AppointmentController::class, 'index'])->name('appointments.index');
 Route::get('/create', [AppointmentController::class, 'create'])->name('appointments.create');
 Route::get('/datatable', [AppointmentController::class, 'datatable'])->name('appointments.datatable');
+Route::get('/pendingdatatable', [AppointmentController::class, 'pendingdatatable'])->name('appointments.pendingdatatable');
+Route::get('/pending', [AppointmentController::class, 'pending'])->name('appointments.pending');
+Route::get('/approveddatatable', [AppointmentController::class, 'approveddatatable'])->name('appointments.approveddatatable');
+Route::get('/approved', [AppointmentController::class, 'approved'])->name('appointments.approved');
+Route::get('/sample_collecteddatatable', [AppointmentController::class, 'sample_collecteddatatable'])->name('appointments.sample_collecteddatatable');
+Route::get('/sample_collected', [AppointmentController::class, 'sample_collected'])->name('appointments.sample_collected');
+Route::get('/waitingdatatable', [AppointmentController::class, 'waitingdatatable'])->name('appointments.waitingdatatable');
+Route::get('/waiting', [AppointmentController::class, 'waiting'])->name('appointments.waiting');
+Route::get('/result_senddatatable', [AppointmentController::class, 'result_senddatatable'])->name('appointments.result_senddatatable');
+Route::get('/result_send', [AppointmentController::class, 'result_send'])->name('appointments.result_send');
 Route::get('/testdatatable', [AppointmentController::class, 'testdatatable'])->name('appointments.testdatatable');
 Route::post('/store', [AppointmentController::class, 'store'])->name('appointments.store');
 Route::get('/{appointment}/edit', [AppointmentController::class, 'edit'])->name('appointments.edit');

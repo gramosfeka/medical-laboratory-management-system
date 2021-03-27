@@ -10,7 +10,6 @@
 
 @section('content')
     <div class="container">
-
         <div class="col">
             <div class="card">
                 <div class="card-body">
@@ -123,7 +122,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Test Name</th>
-                                        <th>TestPrice</th>
+                                        <th>Test Price</th>
                                         <th>Select Tests</th>
                                     </tr>
                                 </thead>
@@ -141,8 +140,9 @@
                                 </tbody>
                             </table>
                             </div>
-
-                            <button class="btn-btn-sm btn-primary mt-4">Save</button>
+                            <div class="col-sm-10 offset-sm-2">
+                                <button class="btn-btn-sm btn-primary mt-4">Save</button>
+                            </div>
                         </div>
                     </form>
                 </div>

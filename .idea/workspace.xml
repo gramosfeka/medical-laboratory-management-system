@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44c5b495-e7d8-4112-a07e-b7c2bb7e3eb6" name="Default Changelist" comment="fixes">
+    <list default="true" id="44c5b495-e7d8-4112-a07e-b7c2bb7e3eb6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/GeneralException.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/GeneralException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Listeners/UserEmailNotifyListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/UserEmailNotifyListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/common/brand-logo-xl.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/common/brand-logo-xl.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/common/brand-logo-xs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/common/brand-logo-xs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/navbar/dropdown-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/navbar/dropdown-item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/navbar/menu-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/navbar/menu-item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/menu-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/menu-item.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointments/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointments/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tests/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tests/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tests/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tests/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tests/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tests/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tests/single.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tests/single.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -170,7 +173,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Fakultet/Tema/sports_appointment-main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="settings.editor.splitter.proportion" value="0.25370187" />
@@ -281,7 +284,18 @@
       <workItem from="1616688128414" duration="4098000" />
       <workItem from="1616692286078" duration="76000" />
       <workItem from="1616697090007" duration="1615000" />
-      <workItem from="1616706742095" duration="3215000" />
+      <workItem from="1616706742095" duration="3515000" />
+      <workItem from="1616711036036" duration="9000" />
+      <workItem from="1616711597508" duration="1410000" />
+      <workItem from="1616758558949" duration="3131000" />
+      <workItem from="1616763469402" duration="910000" />
+      <workItem from="1616766166958" duration="4301000" />
+      <workItem from="1616772182712" duration="2042000" />
+      <workItem from="1616845145228" duration="1884000" />
+      <workItem from="1616847788970" duration="75000" />
+      <workItem from="1616858838935" duration="3391000" />
+      <workItem from="1616864177532" duration="941000" />
+      <workItem from="1616865249714" duration="1656000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1616271498471</created>
@@ -332,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616692339971</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixes">
+      <created>1616710061827</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1616710061827</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

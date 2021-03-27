@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Create Form User')
+@section('title', 'Edit User')
 
 @section('content_header')
     <div class="container">
-        <h1>Edit user</h1>
+        <h1>Edit User</h1>
     </div>
 @stop
 
@@ -14,7 +14,6 @@
             <div class="card">
                 <div class="card-body">
                     <form action="{{ route('users.update', ['user' => $user->id]) }}" method="POST" enctype="multipart/form-data">
-
                         @method('PUT')
                         @csrf
                         <div class="col-md-10 offset-md-2">
@@ -86,8 +85,9 @@
                                         </span>
                                 @enderror
                             </div>
-
-                            <button class="btn-btn-sm btn-primary mt-2">Update</button>
+                            <div class="col-sm-10 offset-sm-2">
+                                 <button class="btn-btn-sm btn-primary mt-2">Update</button>
+                            </div>
                         </div>
                     </form>
                 </div>

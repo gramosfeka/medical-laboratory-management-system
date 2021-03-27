@@ -1,12 +1,12 @@
 @extends('adminlte::page')
 
-@section('title', 'All Tests')
+@section('title', 'Test Details')
 
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
-           
+
             <p class="text-center py-4">Test Name: {{ $test->title}}</p>
                 <div class="card-body table-responsive">
 

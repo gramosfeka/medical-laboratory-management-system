@@ -168,4 +168,169 @@ class AppointmentController extends Controller
     public function destroy($id){
 
     }
+
+    public function pendingdatatable()
+    {
+        if(auth()->user()->is_employee ){
+            $appointments = Appointment::where('employee_id', auth()->user()->id)->where('status','pending')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }
+
+        return Datatables::of($appointments)
+            ->addColumn('id', function (Appointment $appointment) {
+                return $appointment->id;
+            })
+            ->addColumn('name', function (Appointment $appointment) {
+                return $appointment->name;
+            })
+            ->addColumn('surname', function (Appointment $appointment) {
+                return $appointment->surname;
+            })
+            ->addColumn('phone_number', function (Appointment $appointment) {
+                return $appointment->phone_number;
+            })
+            ->addColumn('status', function (Appointment $appointment) {
+                return $appointment->status;
+            })
+            ->addColumn('actions', function (Appointment $appointment) {
+                return view('appointments.inc.actions', ['appointment' => $appointment])->render();
+            })
+            ->rawColumns(['id', 'name', 'surname', 'phone_number','status','actions'])
+            ->make(true);
+    }
+
+    public function pending(){
+        return view('appointments.status.pending');
+    }
+
+    public function approveddatatable()
+    {
+        if(auth()->user()->is_employee ){
+            $appointments = Appointment::where('employee_id', auth()->user()->id)->where('status','approved')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }
+
+        return Datatables::of($appointments)
+            ->addColumn('id', function (Appointment $appointment) {
+                return $appointment->id;
+            })
+            ->addColumn('name', function (Appointment $appointment) {
+                return $appointment->name;
+            })
+            ->addColumn('surname', function (Appointment $appointment) {
+                return $appointment->surname;
+            })
+            ->addColumn('phone_number', function (Appointment $appointment) {
+                return $appointment->phone_number;
+            })
+            ->addColumn('status', function (Appointment $appointment) {
+                return $appointment->status;
+            })
+            ->addColumn('actions', function (Appointment $appointment) {
+                return view('appointments.inc.actions', ['appointment' => $appointment])->render();
+            })
+            ->rawColumns(['id', 'name', 'surname', 'phone_number','status','actions'])
+            ->make(true);
+    }
+
+    public function approved(){
+        return view('appointments.status.approved');
+    }
+
+    public function waitingdatatable()
+    {
+        if(auth()->user()->is_employee ){
+            $appointments = Appointment::where('employee_id', auth()->user()->id)->where('status','waiting')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }
+
+        return Datatables::of($appointments)
+            ->addColumn('id', function (Appointment $appointment) {
+                return $appointment->id;
+            })
+            ->addColumn('name', function (Appointment $appointment) {
+                return $appointment->name;
+            })
+            ->addColumn('surname', function (Appointment $appointment) {
+                return $appointment->surname;
+            })
+            ->addColumn('phone_number', function (Appointment $appointment) {
+                return $appointment->phone_number;
+            })
+            ->addColumn('status', function (Appointment $appointment) {
+                return $appointment->status;
+            })
+            ->addColumn('actions', function (Appointment $appointment) {
+                return view('appointments.inc.actions', ['appointment' => $appointment])->render();
+            })
+            ->rawColumns(['id', 'name', 'surname', 'phone_number','status','actions'])
+            ->make(true);
+    }
+
+    public function waiting(){
+        return view('appointments.status.waiting');
+    }
+
+    public function sample_collecteddatatable()
+    {
+        if(auth()->user()->is_employee ){
+            $appointments = Appointment::where('employee_id', auth()->user()->id)->where('status','sample_collected')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }
+
+        return Datatables::of($appointments)
+            ->addColumn('id', function (Appointment $appointment) {
+                return $appointment->id;
+            })
+            ->addColumn('name', function (Appointment $appointment) {
+                return $appointment->name;
+            })
+            ->addColumn('surname', function (Appointment $appointment) {
+                return $appointment->surname;
+            })
+            ->addColumn('phone_number', function (Appointment $appointment) {
+                return $appointment->phone_number;
+            })
+            ->addColumn('status', function (Appointment $appointment) {
+                return $appointment->status;
+            })
+            ->addColumn('actions', function (Appointment $appointment) {
+                return view('appointments.inc.actions', ['appointment' => $appointment])->render();
+            })
+            ->rawColumns(['id', 'name', 'surname', 'phone_number','status','actions'])
+            ->make(true);
+    }
+
+    public function sample_collected(){
+        return view('appointments.status.sample_collected');
+    }
+
+    public function result_senddatatable()
+    {
+        if(auth()->user()->is_employee ){
+            $appointments = Appointment::where('employee_id', auth()->user()->id)->where('status','result_send')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }
+
+        return Datatables::of($appointments)
+            ->addColumn('id', function (Appointment $appointment) {
+                return $appointment->id;
+            })
+            ->addColumn('name', function (Appointment $appointment) {
+                return $appointment->name;
+            })
+            ->addColumn('surname', function (Appointment $appointment) {
+                return $appointment->surname;
+            })
+            ->addColumn('phone_number', function (Appointment $appointment) {
+                return $appointment->phone_number;
+            })
+            ->addColumn('status', function (Appointment $appointment) {
+                return $appointment->status;
+            })
+            ->addColumn('actions', function (Appointment $appointment) {
+                return view('appointments.inc.actions', ['appointment' => $appointment])->render();
+            })
+            ->rawColumns(['id', 'name', 'surname', 'phone_number','status','actions'])
+            ->make(true);
+    }
+
+    public function result_send(){
+        return view('appointments.status.result_send');
+    }
 }

@@ -61,8 +61,9 @@
                                     @enderror
                                 </div>
                             </div>
-
-                            <button class="btn-btn-sm btn-primary mt-2">Update</button>
+                            <div class="col-sm-10 offset-sm-2">
+                                <button class="btn-btn-sm btn-primary mt-2">Update</button>
+                            </div>
                         </div>
                     </form>
                 </div>
