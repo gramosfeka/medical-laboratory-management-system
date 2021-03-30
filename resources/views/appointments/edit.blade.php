@@ -36,7 +36,18 @@
                             </tr>
                             <tr>
                               <th colspan="2" class= "text-right">Status</th>
-                              <td colspan="2" class ="text-left">{{$appointment->status}}</td>
+                              <td colspan="2" class ="text-left">
+                                  @if($appointment->status === 'pending')
+                                      <span class="badge badge-sm bg-danger">Pending</span>
+                                  @elseif($appointment->status === 'approved')
+                                      <span class="badge badge-sm bg-primary">Approved</span>
+                                  @elseif($appointment->status === 'waiting')
+                                      <span class="badge badge-sm bg-warning">Waiting</span>
+                                  @elseif($appointment->status === 'sample_collected')
+                                      <span class="badge badge-sm bg-info">Sample Collected</span>
+                                  @else
+                                      <span class="badge badge-sm bg-success">Result Send</span>
+                                @endif
                             </tr>
                             @if(($appointment->file != null))
                             <tr>

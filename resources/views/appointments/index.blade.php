@@ -55,8 +55,28 @@
                     {data: 'name', name: 'name'},
                     {data: 'surname', name: 'surname'},
                     {data: 'phone_number', name: 'phone_number'},
-                    {data: 'status', name: 'status'},
+                    {data: 'status',
+
+                        "render" : function(data)
+                        {
+                            if (data === 'pending') {
+                                return '<span class="badge badge-sm bg-danger">Pending</span>'
+                            }else if(data === 'approved'){
+                                return '<span class="badge badge-sm bg-primary">Approved</span>'
+                            }else if(data === 'waiting'){
+                                return '<span class="badge badge-sm bg-warning">Waiting</span>'
+                            }else if(data === 'sample_collected'){
+                                return '<span class="badge badge-sm bg-info">Sample Collected</span>'
+                            }else{
+                                return '<span class="badge badge-sm bg-success">Result Send</span>'
+                            }
+
+                        },
+                        name: 'status'
+                    },
+
                     {data: 'actions', name: 'actions'},
+
                 ],
             });
         });
