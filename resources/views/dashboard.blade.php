@@ -48,9 +48,24 @@
                 </a>
             </div>
         </div>
-            @if(auth()->user()->is_employee)
+            @if(!(auth()->user()->is_employee))
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="small-box bg-gradient-warning">
+                        <div class="inner">
+                            <h3 class="numbers" style="color:white">{{$pending}}  </h3>
+                            <h4 style="color:white">Pending </h4>
+                        </div>
+                        <div class="icon">
+                            <i class="far fa-calendar-check"></i>
+                        </div>
+                        <a href="{{ route('appointments.pending') }}" class="small-box-footer">
+                            All Pending &nbsp<i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            @endif
             <div class="col-lg-3 col-md-3 col-sm-12">
-                <div class="small-box bg-danger">
+                <div class="small-box bg-info">
                     <div class="inner">
                         <h3 class="numbers" style="color:white">{{$approved}}  </h3>
                         <h4 style="color:white">Approved </h4>
@@ -63,6 +78,7 @@
                     </a>
                 </div>
             </div>
+
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="small-box bg-gradient-warning">
                         <div class="inner">
@@ -107,7 +123,6 @@
                     </div>
                 </div>
 
-                @endif
     </div>
 </div>
 @endsection

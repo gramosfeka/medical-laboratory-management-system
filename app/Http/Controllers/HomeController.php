@@ -36,10 +36,26 @@ class HomeController extends Controller
         $users = User::count();
         $tests = Test::count();
 
-        $approved = Appointment::where('status', 'approved')->count();
-        $waiting = Appointment::where('status', 'waiting')->count();
-        $sample_collected = Appointment::where('status', 'sample_collected')->count();
-        $result_send = Appointment::where('status', 'result_send')->count();
+
+        if (auth()->user()->is_admin){
+            $pending = Appointment::where('status', 'pending')->count();
+            $approved = Appointment::where('status', 'approved')->count();
+            $waiting = Appointment::where('status', 'waiting')->count();
+            $sample_collected = Appointment::where('status', 'sample_collected')->count();
+            $result_send = Appointment::where('status', 'result_send')->count();
+        }elseif(auth()->user()->is_user){
+            $pending = Appointment::where('user_id', auth()->user()->id)->where('status','pending')->count();
+            $approved = Appointment::where('user_id', auth()->user()->id)->where('status','approved')->count();
+            $waiting = Appointment::where('user_id', auth()->user()->id)->where('status','waiting')->count();
+            $sample_collected = Appointment::where('user_id', auth()->user()->id)->where('status','sample_collected')->count();
+            $result_send = Appointment::where('user_id', auth()->user()->id)->where('status','result_send')->count();
+        }else {
+            $pending = Appointment::where('employee_id', auth()->user()->id)->where('status','pending')->count();
+            $approved = Appointment::where('employee_id', auth()->user()->id)->where('status','approved')->count();
+            $waiting = Appointment::where('employee_id', auth()->user()->id)->where('status','waiting')->count();
+            $sample_collected = Appointment::where('employee_id', auth()->user()->id)->where('status','sample_collected')->count();
+            $result_send = Appointment::where('employee_id', auth()->user()->id)->where('status','result_send')->count();
+        }
 
 
         return view('dashboard', [
@@ -50,6 +66,7 @@ class HomeController extends Controller
             'waiting' => $waiting,
             'sample_collected' => $sample_collected,
             'result_send' => $result_send,
+            'pending' => $pending,
 
         ]);
 

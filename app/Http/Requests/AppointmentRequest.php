@@ -30,7 +30,7 @@ class AppointmentRequest extends FormRequest
              'name' => ['required', 'string', 'max:255'],
              'surname' => ['required', 'string', 'max:255'],
              'date_of_birth' => ['required', 'date','before:today'],
-             'phone_number' => 'required',
+             'phone_number' =>['required'],
              'email' => ['required', 'string', 'email', 'max:255'],
              'date' => ['required', 'date','after:'.$todayDate],
              'time'=>['required', 'string'],

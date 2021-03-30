@@ -11,12 +11,18 @@
     <div class="sidebar">
         <nav class="mt-4">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+
             <li class="nav-item">
                 <a href="{{route('profile')}} "class="nav-link mb-4" href="">
                     <i class="nav-icon fa fa-user"></i>&nbsp;<p class="text">Profile</p>
                 </a>
                 <hr>
             </li>
+                <li class="nav-item">
+                    <a href="{{ route('home') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>&nbsp;<p class="text">Dashboard</p>
+                    </a>
+                </li>
 
             @if(($base_isAdmin))
             <li class="nav-item">

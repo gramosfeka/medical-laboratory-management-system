@@ -34,7 +34,7 @@ class TestController extends Controller
             ->addColumn('price', function (Test $test) {
                 return $test->price;
             })
-            
+
             ->addColumn('actions', function (Test $test) {
                 return view('tests.actions', ['test' => $test])->render();
             })
@@ -46,7 +46,7 @@ class TestController extends Controller
 
         return view('tests.show');
     }
-    
+
     public function testsdatatable()
     {
 
@@ -67,10 +67,10 @@ class TestController extends Controller
             })
             ->rawColumns(['id', 'title', 'price', 'actions'])
             ->make(true);
-    
+
     }
 
-    
+
 
     public function store(TestRequest $request){
         Test::create([
@@ -110,7 +110,7 @@ class TestController extends Controller
     public function destroy($id){
         $test = Test::find($id);
         $test->delete();
-        Toastr::error('Test deleted successfully','Success');
+        Toastr::success('Test deleted successfully','Success');
         return redirect()->route('tests.index');
     }
 }

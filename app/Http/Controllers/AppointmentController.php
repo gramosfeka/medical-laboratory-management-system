@@ -124,7 +124,7 @@ class AppointmentController extends Controller
                 'user_id' => auth()->user()->is_admin ? $request->user_id : auth()->user()->id,
             ])->tests()->attach($request->input('test', []));
 
-        Toastr::success('Appointment add successfuly', 'success');
+        Toastr::success('Appointment added successfuly', 'success');
         return redirect()->route('appointments.index');
     }
 
@@ -171,8 +171,11 @@ class AppointmentController extends Controller
 
     public function pendingdatatable()
     {
-        if(auth()->user()->is_employee ){
-            $appointments = Appointment::where('employee_id', auth()->user()->id)->where('status','pending')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+
+        if (auth()->user()->is_admin){
+            $appointments = Appointment::where('status','pending')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }elseif(auth()->user()->is_user){
+            $appointments = Appointment::where('user_id', auth()->user()->id)->where('status','pending')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
         }
 
         return Datatables::of($appointments)
@@ -204,9 +207,15 @@ class AppointmentController extends Controller
 
     public function approveddatatable()
     {
-        if(auth()->user()->is_employee ){
+
+        if (auth()->user()->is_admin){
+            $appointments = Appointment::where('status','approved')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }elseif(auth()->user()->is_user){
+            $appointments = Appointment::where('user_id', auth()->user()->id)->where('status','approved')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }else {
             $appointments = Appointment::where('employee_id', auth()->user()->id)->where('status','approved')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
         }
+
 
         return Datatables::of($appointments)
             ->addColumn('id', function (Appointment $appointment) {
@@ -237,7 +246,12 @@ class AppointmentController extends Controller
 
     public function waitingdatatable()
     {
-        if(auth()->user()->is_employee ){
+
+        if (auth()->user()->is_admin){
+            $appointments = Appointment::where('status','waiting')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }elseif(auth()->user()->is_user){
+            $appointments = Appointment::where('user_id', auth()->user()->id)->where('status','waiting')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }else {
             $appointments = Appointment::where('employee_id', auth()->user()->id)->where('status','waiting')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
         }
 
@@ -270,7 +284,12 @@ class AppointmentController extends Controller
 
     public function sample_collecteddatatable()
     {
-        if(auth()->user()->is_employee ){
+
+        if (auth()->user()->is_admin){
+            $appointments = Appointment::where('status','sample_collected')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }elseif(auth()->user()->is_user){
+            $appointments = Appointment::where('user_id', auth()->user()->id)->where('status','sample_collected')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }else {
             $appointments = Appointment::where('employee_id', auth()->user()->id)->where('status','sample_collected')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
         }
 
@@ -303,9 +322,15 @@ class AppointmentController extends Controller
 
     public function result_senddatatable()
     {
-        if(auth()->user()->is_employee ){
+
+        if (auth()->user()->is_admin){
+            $appointments = Appointment::where('status','result_send')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }elseif(auth()->user()->is_user){
+            $appointments = Appointment::where('user_id', auth()->user()->id)->where('status','result_send')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
+        }else {
             $appointments = Appointment::where('employee_id', auth()->user()->id)->where('status','result_send')->get(['id', 'name', 'surname', 'phone_number', 'status', 'user_id']);
         }
+
 
         return Datatables::of($appointments)
             ->addColumn('id', function (Appointment $appointment) {

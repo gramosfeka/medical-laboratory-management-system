@@ -101,7 +101,7 @@ class UserController extends Controller
     public function destroy($id){
         $user = User::find($id);
         $user->delete();
-        Toastr::error('User deleted successfully','Success');
+        Toastr::success('User deleted successfully','Success');
         return redirect()->route('users.index');
     }
 }

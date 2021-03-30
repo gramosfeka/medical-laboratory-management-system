@@ -57,7 +57,7 @@ class ProfileController extends Controller
         } catch (GeneralException $e) {
         }
 
-        Toastr::success('User updated successfully','Success');
+        Toastr::success('Password updated successfully','Success');
         return redirect()->route('home');
     }
 

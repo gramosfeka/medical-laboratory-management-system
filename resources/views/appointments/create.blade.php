@@ -72,7 +72,17 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="row">
+                            <div class="col-md-2">
+
+                            </div>
+                            <div class="col-md-10">
+                                <p style="color:red;"><Strong>Please choose a Date after today:</Strong></p>
+                            </div>
+                            </div>
+
                             <div class="form-group row" style="text-align: right;">
+
                                 <label class="form-inline col-md-2 col-form-label text-right" for="date">Appointment Date:</label>
                                 <div class="col-sm-10">
                                     <input type="date" name="date" id="date" value="{{Carbon\Carbon::now()}}" placeholder="" class="form-control @error('date') is-invalid @enderror">
@@ -174,9 +184,6 @@
                 }
             });
         });
-
-
-
 
     </script>
 @endpush
