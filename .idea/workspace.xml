@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44c5b495-e7d8-4112-a07e-b7c2bb7e3eb6" name="Default Changelist" comment="fixes">
+    <list default="true" id="44c5b495-e7d8-4112-a07e-b7c2bb7e3eb6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/1616357485.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/1616511485.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/1616522523.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/1616523126.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/1616538420.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/1616599891.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/1616600504.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/1616712761.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/appointments/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/appointments/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointments/status/approved.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/status/approved.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointments/status/pending.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/status/pending.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointments/status/result_send.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/status/result_send.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointments/status/sample_collected.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/status/sample_collected.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointments/status/waiting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/status/waiting.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/left-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/left-sidebar.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -309,7 +312,17 @@
       <workItem from="1617057614171" duration="74000" />
       <workItem from="1617103981980" duration="2484000" />
       <workItem from="1617107769108" duration="13000" />
-      <workItem from="1617112171575" duration="2775000" />
+      <workItem from="1617112171575" duration="2860000" />
+      <workItem from="1617117011151" duration="1104000" />
+      <workItem from="1617121169769" duration="15000" />
+      <workItem from="1617138920474" duration="396000" />
+      <workItem from="1617144966994" duration="67000" />
+      <workItem from="1617194274787" duration="9581000" />
+      <workItem from="1617215157824" duration="207000" />
+      <workItem from="1617225108546" duration="2333000" />
+      <workItem from="1617270712077" duration="4982000" />
+      <workItem from="1617278284975" duration="1740000" />
+      <workItem from="1617286561651" duration="1316000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1616271498471</created>
@@ -381,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617105144951</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fixes">
+      <created>1617114988092</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1617114988093</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

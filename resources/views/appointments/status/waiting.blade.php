@@ -42,7 +42,18 @@
                     {data: 'name', name: 'name'},
                     {data: 'surname', name: 'surname'},
                     {data: 'phone_number', name: 'phone_number'},
-                    {data: 'status', name: 'status'},
+                    {data: 'status',
+
+                        "render" : function(data)
+                        {
+                            if (data === 'waiting') {
+                                return '<span class="badge badge-sm bg-warning">Waiting</span>'
+                            }
+
+                        },
+                        className: "text-center",
+                        name: 'status'
+                    },
                     {data: 'actions', name: 'actions'},
                 ],
             });

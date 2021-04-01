@@ -75,9 +75,9 @@
                             <div class="form-group row" style="text-align: right;">
                             <label class="form-inline col-md-2 col-form-label" for="role" style="display: block;">Role:</label>
                             <select name="role" class="form-control col-sm-10 @error('role') is-invalid @enderror">
-                                <option value="user">User</option>
-                                <option value="admin">Admin</option>
-                                <option value="employee" >Employee</option>
+                                <option value="user" {{$user->role == 'user' ? 'selected' : ''}}>User</option>
+                                <option value="admin {{$user->role == 'admin' ? 'selected' : ''}}">Admin</option>
+                                <option value="employee"{{$user->role == 'employee' ? 'selected' : ''}} >Employee</option>
                             </select>
                                 @error('role')
                                 <span class="invalid-feedback text-left" role="alert">

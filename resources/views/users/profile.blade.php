@@ -113,7 +113,7 @@
                             </div>
                         </div>
                         <div class="form-group row"style="text-align: right;">
-                            <label class="form-inline col-md-2  col-form-label" for="phone_number" style="display: block;">Password confirm :</label>
+                            <label class="form-inline col-md-2  col-form-label" for="password_confirmation" style="display: block;">Password confirm:</label>
                             <div class="col-sm-10">
                                 <input type="password" name="password_confirmation" id="password_confirmation" value="" placeholder="" class="form-control @error('password_confirmation') is-invalid @enderror">
                                 @error('password_confirmation')

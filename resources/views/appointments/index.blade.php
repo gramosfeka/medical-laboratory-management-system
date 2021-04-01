@@ -72,6 +72,7 @@
                             }
 
                         },
+                        className: "text-center",
                         name: 'status'
                     },
 

@@ -103,7 +103,7 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Take Action</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                             </button>
@@ -137,9 +137,9 @@
                                                 @if(($base_isEmployee))
                                                     <label class="form-inline col-md-2 col-form-label" for="status" style="display: block;">Status:</label>
                                                     <select name="status" class="form-control col-sm-10 @error('status') is-invalid @enderror">
-                                                        <option value="waiting">Waiting</option>
-                                                        <option value="sample_collected" >Sample Collected</option>
-                                                        <option value="result_send" >Result send</option>
+                                                        <option value="waiting"{{$appointment->status == 'waiting' ? 'selected' : ''}}>Waiting</option>
+                                                        <option value="sample_collected" {{$appointment->status == 'sample_collected' ? 'selected' : ''}}>Sample Collected</option>
+                                                        <option value="result_send" {{$appointment->status == 'result_send' ? 'selected' : ''}}>Result send</option>
                                                     </select>
                                                         @error('status')
                                                              <span class="invalid-feedback text-left" role="alert">

@@ -6,7 +6,12 @@
     @else
         @include('adminlte::partials.common.brand-logo-xs')
     @endif
+    <style>
+        ul {
+            list-style-type: none;
 
+        }
+    </style>
     {{-- Sidebar menu --}}
     <div class="sidebar">
         <nav class="mt-4">
@@ -38,7 +43,14 @@
             </li>
 
             @endif
+                @if(!$base_isAdmin)
 
+                <li class="nav-item">
+                    <a href="{{ route('tests.show') }}" class="nav-link">
+                        <i class="nav-icon far fa-list-alt"></i>&nbsp;<p class="text">Test Details</p>
+                    </a>
+                </li>
+            @endif
 
 
             <li class="nav-item">
@@ -48,11 +60,6 @@
             </li>
 
 
-            <li class="nav-item">
-                <a href="{{ route('tests.show') }}" class="nav-link">
-                  <i class="nav-icon far fa-list-alt"></i>&nbsp;<p class="text">Test Details</p>
-                </a>
-            </li>
 
                 {{-- Configured sidebar links --}}
                 @each('adminlte::partials.sidebar.menu-item', $adminlte->menu('sidebar'), 'item')

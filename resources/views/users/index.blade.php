@@ -50,7 +50,23 @@
                     {data: 'surname', name: 'surname'},
                     {data: 'phone_number', name: 'phone_number'},
                     {data: 'email', name: 'email'},
-                    {data: 'role', name: 'role'},
+                    {data: 'role',
+                        "render" : function(data)
+                        {
+                            if (data === 'user') {
+                                return '<span class=" text-center badge badge-sm bg-primary">User</span>'
+                            }else if(data === 'admin'){
+                                return '<span class="badge badge-sm bg-success">Admin</span>'
+                            }else{
+                                return '<span class="badge badge-sm bg-info">Employee</span>'
+                            }
+
+
+                        },
+                        className: "text-center",
+
+
+                        name: 'role'},
                     {data: 'actions', name: 'actions'}
                 ],
             });

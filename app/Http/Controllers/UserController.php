@@ -83,13 +83,30 @@ class UserController extends Controller
 
     }
 
-    public function update(UserRequest $request, $id){
-        $user = User::find($id);
+    public function update(Request $request, User $user){
+
+        $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'surname' => ['required', 'string', 'max:255'],
+                'phone_number' => ['required'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,'. $user->id],
+                'address' => ['required', 'string', 'max:255'],
+                'role'=>'required',
+        ]);
+
+        if ($user->email != $request->email)
+        {
+            $user->update([
+                'password' => Hash::make($user->name.".".$user->surname),
+                'email' => $request->email,
+            ]);
+            event(new UserRegistered($user));
+        }
+
         $user->update([
             'name' => $request->name,
             'surname' => $request->surname,
             'phone_number' => $request->phone_number,
-            'email' => $request->email,
             'address' => $request->address,
             'role' => $request->role
             ]);
