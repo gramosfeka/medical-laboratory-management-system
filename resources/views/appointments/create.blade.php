@@ -17,7 +17,7 @@
                         @csrf
                         <div class="col-md-10 offset-md-2">
                             <div class="form-group row" style="text-align: right;">
-                                <label class="form-inline col-md-2 col-form-label " for="name" style="display: block;"> Name:</label>
+                                <label class="form-inline col-sm-2 col-form-label " for="name" style="display: block;"> Name:</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="name" id="name" value="{{ old('name') }}" placeholder="" class="form-control @error('name') is-invalid @enderror">
                                     @error('name')
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <div class="form-group row" style="text-align: right;">
-                                <label class="form-inline col-md-2 col-form-label " for="surname" style="display: block;"> Surname:</label>
+                                <label class="form-inline col-sm-2 col-form-label " for="surname" style="display: block;"> Surname:</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="surname" id="surname" value="{{ old('surname') }}" placeholder="" class="form-control @error('surname') is-invalid @enderror">
                                     @error('surname')
@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="form-group row" style="text-align: right;">
-                                <label class="form-inline col-md-2 col-form-label text-right" for="date_of_birth" style="display: block;">Date of birth:</label>
+                                <label class="form-inline col-sm-2 col-form-label text-right" for="date_of_birth" style="display: block;">Date of birth:</label>
                                 <div class="col-sm-10">
                                     <input type="date" name="date_of_birth" id="date_of_birth" value="{{ old('date_of_birth') }}" placeholder="" class="form-control @error('date_of_birth') is-invalid @enderror">
                                     @error('date_of_birth')
@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="form-group row" style="text-align: right;">
-                                <label class="form-inline col-md-2 col-form-label" for="phone_number" style="display: block;">Phone number:</label>
+                                <label class="form-inline col-sm-2 col-form-label" for="phone_number" style="display: block;">Phone number:</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="phone_number" id="phone_number" value="{{ old('phone_number') }}" placeholder="" class="form-control @error('phone_number') is-invalid @enderror">
                                     @error('phone_number')
@@ -62,7 +62,7 @@
                                 </div>
                             </div>
                             <div class="form-group row "style="text-align: right;">
-                                <label class="form-inline col-md-2 col-form-label" style="display: block;" for="email">Email:</label>
+                                <label class="form-inline col-sm-2 col-form-label" style="display: block;" for="email">Email:</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="email" id="email" value="{{ old('email') }}" placeholder="" class="form-control @error('email') is-invalid @enderror">
                                     @error('email')
@@ -83,7 +83,7 @@
 
                             <div class="form-group row" style="text-align: right;">
 
-                                <label class="form-inline col-md-2 col-form-label text-right" for="date">Appointment Date:</label>
+                                <label class="form-inline col-sm-2 col-form-label text-right" for="date">Appointment Date:</label>
                                 <div class="col-sm-10">
                                     <input type="date" name="date" id="date" value="{{Carbon\Carbon::now()}}" placeholder="" class="form-control @error('date') is-invalid @enderror">
                                     @error('date')
@@ -95,7 +95,7 @@
                             </div>
 
                             <div class="form-group row" style="text-align: right;">
-                                <label class="form-inline col-md-2 col-form-label text-right" for="time">Appointment time:</label>
+                                <label class="form-inline col-sm-2 col-form-label text-right" for="time">Appointment time:</label>
                                 <select name="time" id= "times" class="form-control col-sm-10 @error('times') is-invalid @enderror">
                                     @foreach($events as $event)
                                         <option value="{{ $event }}">{{ $event }}</option>
@@ -110,7 +110,7 @@
 
                             @if(($base_isAdmin))
                             <div class="form-group row" style="text-align: right;">
-                                <label class="form-inline col-md-2 col-form-label " for="user_id" style="display: block;"> User:</label>
+                                <label class="form-inline col-sm-2 col-form-label " for="user_id" style="display: block;"> User:</label>
                                 <div class="col-sm-10">
                                     <select name="user_id" id= "user_id" class="form-control @error('user_id') is-invalid @enderror">
                                         @foreach($users as $user)

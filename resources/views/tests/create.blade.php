@@ -18,7 +18,7 @@
                         @csrf
                         <div class="col-md-10 offset-md-2">
                             <div class="form-group row" style="text-align: right;">
-                                <label class="form-inline col-md-2 col-form-label " for="title" style="display: block;">Test title:</label>
+                                <label class="form-inline col-sm-2 col-form-label " for="title" style="display: block;">Test title:</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="title" id="title" value="{{ old('title') }}" placeholder="" class="form-control @error('title') is-invalid @enderror">
                                     @error('title')
@@ -29,7 +29,7 @@
                                 </div>
                             </div>
                             <div class="form-group row" style="text-align: right;">
-                                <label class="form-inline col-md-2 col-form-label text-right" for="description" style="display: block;">Description:</label>
+                                <label class="form-inline col-sm-2 col-form-label text-right" for="description" style="display: block;">Description:</label>
                                 <div class="col-sm-10">
                                    <textarea name="description" id="description"  class="form-control @error('description') is-invalid @enderror" rows="5"></textarea>
                                     @error('description')
@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                             <div class="form-group row" style="text-align: right;">
-                                <label class="form-inline col-md-2 col-form-label text-right" for="interpretation" style="display: block;">Interpretation:</label>
+                                <label class="form-inline col-sm-2 col-form-label text-right" for="interpretation" style="display: block;">Interpretation:</label>
                                 <div class="col-sm-10">
                                    <textarea name="interpretation" id="interpretation"  class="form-control @error('interpretation') is-invalid @enderror" rows="5"></textarea>
                                     @error('interpretation')
@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="form-group row" style="text-align: right;">
-                                <label class="form-inline col-md-2 col-form-label" for="price" style="display: block;">Price:</label>
+                                <label class="form-inline col-sm-2 col-form-label" for="price" style="display: block;">Price:</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="price" id="price"  value="{{ old('price') }}" placeholder="" class="form-control @error('price') is-invalid @enderror">
                                     @error('price')

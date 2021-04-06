@@ -113,7 +113,7 @@
                                             @csrf
                                             <div class="modal-body">
                                                 @if(($base_isAdmin  && $appointment->status == 'pending'))
-                                                    <label class="form-inline col-md-2 col-form-label" for="status" style="display: block;">Status:</label>
+                                                    <label class="form-inline col-sm-2 col-form-label" for="status" style="display: block;">Status:</label>
                                                     <select name="status" class="form-control col-sm-10 @error('status') is-invalid @enderror">
                                                         <option value="approved">Approved</option>
                                                     </select>
@@ -122,7 +122,7 @@
                                                             {{ $message }}
                                                         </span>
                                                     @enderror
-                                                    <label class="form-inline col-md-3 col-form-label" for="employee_id" style="display: block;">Assign to:</label>
+                                                    <label class="form-inline col-sm-3 col-form-label" for="employee_id" style="display: block;">Assign to:</label>
                                                     <select name="employee_id" id="employee_id" class="form-control col-sm-10 @error('employee_id') is-invalid @enderror">
                                                         @foreach($users as $employee)
                                                             <option value="{{$employee->id}}">{{ $employee->name}}</option>
@@ -135,7 +135,7 @@
                                                     @enderror
                                                 @endif
                                                 @if(($base_isEmployee))
-                                                    <label class="form-inline col-md-2 col-form-label" for="status" style="display: block;">Status:</label>
+                                                    <label class="form-inline col-sm-2 col-form-label" for="status" style="display: block;">Status:</label>
                                                     <select name="status" class="form-control col-sm-10 @error('status') is-invalid @enderror">
                                                         <option value="waiting"{{$appointment->status == 'waiting' ? 'selected' : ''}}>Waiting</option>
                                                         <option value="sample_collected" {{$appointment->status == 'sample_collected' ? 'selected' : ''}}>Sample Collected</option>
@@ -148,7 +148,7 @@
                                                         @enderror
                                                 @endif
                                                 @if($base_isEmployee && $appointment->status == "sample_collected")
-                                                    <label class="form-inline col-md-2 col-form-label" for="file" style="display: block;">Results:</label>
+                                                    <label class="form-inline col-sm-2 col-form-label" for="file" style="display: block;">Results:</label>
                                                     <input type="file" name="file" id="file" value="{{ old('file') }}" class="@error('file') is-invalid @enderror">
                                                     @error('file')
                                                         <span class="invalid-feedback text-left" role="alert">

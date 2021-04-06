@@ -3,17 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="44c5b495-e7d8-4112-a07e-b7c2bb7e3eb6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/appointments/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/appointments/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/appointments/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/appointments/status/approved.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/status/approved.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/appointments/status/pending.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/status/pending.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/appointments/status/result_send.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/status/result_send.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/appointments/status/sample_collected.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/status/sample_collected.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/appointments/status/waiting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/status/waiting.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tests/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tests/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tests/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tests/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/left-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/left-sidebar.blade.php" afterDir="false" />
     </list>
@@ -322,7 +317,21 @@
       <workItem from="1617225108546" duration="2333000" />
       <workItem from="1617270712077" duration="4982000" />
       <workItem from="1617278284975" duration="1740000" />
-      <workItem from="1617286561651" duration="1316000" />
+      <workItem from="1617286561651" duration="1513000" />
+      <workItem from="1617310074052" duration="9000" />
+      <workItem from="1617378623070" duration="598000" />
+      <workItem from="1617453990648" duration="175000" />
+      <workItem from="1617461336939" duration="886000" />
+      <workItem from="1617489920906" duration="187000" />
+      <workItem from="1617490306618" duration="57000" />
+      <workItem from="1617542008978" duration="37000" />
+      <workItem from="1617544482054" duration="2556000" />
+      <workItem from="1617571513597" duration="17000" />
+      <workItem from="1617572568653" duration="1424000" />
+      <workItem from="1617630117421" duration="231000" />
+      <workItem from="1617642945109" duration="633000" />
+      <workItem from="1617643888507" duration="196000" />
+      <workItem from="1617706761136" duration="1665000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1616271498471</created>
@@ -401,14 +410,20 @@
       <option name="project" value="LOCAL" />
       <updated>1617114988093</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fixes">
+      <created>1617297794222</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1617297794222</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/node_modules/concat/index.js" />
         <option value="$PROJECT_DIR$/node_modules/concat/index.js" />
       </list>
     </option>
