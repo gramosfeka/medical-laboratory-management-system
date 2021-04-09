@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44c5b495-e7d8-4112-a07e-b7c2bb7e3eb6" name="Default Changelist" comment="">
+    <list default="true" id="44c5b495-e7d8-4112-a07e-b7c2bb7e3eb6" name="Default Changelist" comment="fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/appointments/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/appointments/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/appointments/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tests/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tests/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tests/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tests/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/left-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/left-sidebar.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -331,7 +329,15 @@
       <workItem from="1617630117421" duration="231000" />
       <workItem from="1617642945109" duration="633000" />
       <workItem from="1617643888507" duration="196000" />
-      <workItem from="1617706761136" duration="1665000" />
+      <workItem from="1617706761136" duration="2988000" />
+      <workItem from="1617713797740" duration="34000" />
+      <workItem from="1617714822426" duration="1067000" />
+      <workItem from="1617720104522" duration="1826000" />
+      <workItem from="1617723914095" duration="12000" />
+      <workItem from="1617726873140" duration="6251000" />
+      <workItem from="1617743255246" duration="270000" />
+      <workItem from="1617960530273" duration="2434000" />
+      <workItem from="1617963185412" duration="1271000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1616271498471</created>
@@ -417,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617297794222</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixes">
+      <created>1617708459171</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1617708459171</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
